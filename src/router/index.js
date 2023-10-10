@@ -7,6 +7,8 @@ import listJogadores from  '@/components/jogador/List'
 import editJogador   from  '@/components/jogador/Edit'
 import novoJogador   from  '@/components/jogador/Add'
 
+import listPatentes from  '@/components/patente/List'
+
 
 Vue.use(Router)
 
@@ -37,7 +39,12 @@ const router = new Router({
       path: '/addjogador',
       name: "jogador-add",
       component: novoJogador
-    }
+    },
+    {
+      path: '/patentes',
+      name: 'patentes-list',
+      component: listPatentes    
+    },
   ]
 })
 

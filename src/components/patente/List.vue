@@ -1,15 +1,12 @@
 <template>
-    <div id="tab_aut">
-     
-
+    <div id="tab_aut">    
         <div class="col-md-6">
-            <h4>Listagem de Jogadores</h4>
+            <h4>Listagem de Patentes</h4>
             <table class="table table-striped" >
                 <tr>
-                    <th scope="col">NickName</th>
-                    <th scope="col">Data de Cadastro</th>
-                    <th scope="col">Quantidade de Pontos</th>
-                    <th scope="col">Endereço</th> 
+                    <th scope="col">ID</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Cor</th>
                     <th scope="col">Alterar</th>
                     <th scope="col">Remover</th>
                 </tr>                     
