@@ -38,6 +38,7 @@ class JogadorDataService {
 
         console.log('JogadorDataService.create: ', data);
         return await http.post(`/insertjogador/`, data);
+
     }  
 
 }

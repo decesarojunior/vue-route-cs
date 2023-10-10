@@ -40,7 +40,7 @@
                 JogadorDataService.authenticate(j).then(response =>{
 
                     console.log("Retorno do seviço authenticateJogador", response.status);
-                    if(response.status == 201){
+                    if(response.status == 201 || response.status == 200){
 
                         alert('Jogador '+ response.data.nickname + ' authenticate com sucesso');       
                         
@@ -58,8 +58,8 @@
                 ).catch(response => {
 
                     // error callback
-                    alert('Não conectou no serviço authenticateJogador');
-                    console.log(response);
+                    alert('Não conectou no serviço authenticateJogador '+ response);
+                   // console.log(response);
                 });
 
 

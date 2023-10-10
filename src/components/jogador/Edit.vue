@@ -14,7 +14,7 @@
                 </div>
                 <div class="form-group">
                         <label for="inputDtCad">D. Cadastro:</label>
-                        <input type="text" v-model="currentJogador.datacadastro" class="form-control" id="inputDtCad" disabled>
+                        <input type="text" v-model="currentJogador.data_cadastro" class="form-control" id="inputDtCad" disabled>
                 </div>
                 <div class="form-group">
                     <label for="inputDtLast">D. Último Acesso:</label>
@@ -22,7 +22,7 @@
                 </div>
                 <div class="form-group">
                         <label for="inputQtdPontos">Quantidade de Pontos:</label>
-                        <input type="number" v-model="currentJogador.quantpontos" class="form-control" id="inputQtdPontos">
+                        <input type="number" v-model="currentJogador.pontos" class="form-control" id="inputQtdPontos">
                 </div>
                 <div class="form-group">
                     <label for="inputQtdDin">Quantidade de dinheiro:</label>

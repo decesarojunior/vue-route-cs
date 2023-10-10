@@ -17,9 +17,9 @@
                 <tbody>
                     <tr v-for="(j, indice) in jogadores" :key ="j.nickname" :class="{ active: indice == currentIndex }">
                             <td>{{j.nickname}}</td>
-                            <td>{{j.datacadastro}}</td>
-                            <td>{{j.quantpontos}}</td>
-                            <td>{{j.endereco}}</td>
+                            <td>{{j.data_cadastro}}</td>
+                            <td>{{j.pontos}}</td>
+                            <td>{{j.endereco.id}}</td>
                             <td v-if="j.situacao == 'A'"><input type="checkbox" checked disabled></td>
                             <td v-if="j.situacao == 'I'"><input type="checkbox" disabled></td>                     
                             <td><button v-on:click="setCurrentJogador(j, indice)" class="btn" type="button">Alterar</button></td>

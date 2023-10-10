@@ -42,7 +42,7 @@
       </div>
   
       <div v-else>
-        <h4>You submitted successfully!</h4>
+        <h4>Dados enviados com sucesso !</h4>
         <button class="btn btn-success" @click="newJogador">Novo</button>
         <router-link to="/jogadores" class="btn btn-success">Voltar</router-link>
       </div>
@@ -61,10 +61,8 @@
                 jogador: {indice: '', 
                                     nickname: '', 
                                     senha: '',
-                                    quantpontos: 0, 
-                                    quantdinheiro: 0,
-                                    datacadastro: '', 
-                                    data_ultimo_login: '', 
+                                    pontos: 0, 
+                                    quantdinheiro: 0,                                                                        
                                     situacao: true,  
                                     endereco: {codigo: 0, cep: '', complemento: ''},
                                     patentes: []},
@@ -86,12 +84,16 @@
                 
                     JogadorDataService.create(jgd)
                     .then(response => {
+                        
                         this.submitted = true;
                     })
-                    .catch(e => {
-                        console.log(e);
+                    .catch(e => {                        
+                        alert("Erro ao tentar cadastrar. !!! " + e.message);
+
                     })
 
+                }else{
+                    alert('Formulário incompleto !!!');
                 }
 
             },
