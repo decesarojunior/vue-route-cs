@@ -11,13 +11,12 @@
                     <th scope="col">Remover</th>
                 </tr>                     
                 <tbody>
-                    <tr v-for="(j, indice) in jogadores" :key ="j.nickname" :class="{ active: indice == currentIndex }">
-                            <td>{{j.nickname}}</td>
-                            <td>{{j.data_cadastro | formataData}}</td>
-                            <td>{{j.pontos}}</td>
-                            <td>{{j.endereco.cep}}</td>
-                            <td><button v-on:click="setCurrentJogador(j, indice)" class="btn" type="button">Alterar</button></td>
-                            <td><button v-on:click="remJogador(j, indice)" class="btn" type="button">Remover</button></td>
+                    <tr v-for="(p, indice) in patentes" :key ="p.id" :class="{ active: indice == currentIndex }">
+                            <td>{{p.id}}</td>
+                            <td>{{p.nome}}</td>
+                            <td>{{p.cor}}</td>
+                            <td><button v-on:click="setCurrentPatente(p, indice)" class="btn" type="button">Alterar</button></td>
+                            <td><button v-on:click="remPatente(p, indice)" class="btn" type="button">Remover</button></td>
                     </tr>
                 </tbody>
             </table>
@@ -25,28 +24,26 @@
         </div>
 
         <div class="col-md-6">
-            <div v-if="currentJogador">
+            <div v-if="currentPatente">
                     <h4>Jogador</h4>
                     <div>
-                    <label><strong>Nickname:</strong></label> {{ currentJogador.nickname }}
+                    <label><strong>Id:</strong></label> {{ currentPatente.id }}
                     </div>
                     <div>
-                    <label><strong>Data de Cadastro:</strong></label> {{ currentJogador.datacadastro }}
+                    <label><strong>Data de Cadastro:</strong></label> {{ currentPatente.nome }}
                     </div>
-                    <div>
-                    <label><strong>Stituação:</strong></label> {{ currentJogador.situacao == 'A' ? "Ativo" : "Inativo" }}
-                    </div>
+                   
 
                     <a class="badge badge-warning"
-                    :href="'/jogador/' + currentJogador.nickname"
+                    :href="'/patente/' + currentPatente.id"
                     >
                     Edit
                     </a>
             </div>
             <div v-else>
                 <br />
-                <p>Please click on a Player...</p>
-                <router-link to="/addjogador" class="badge badge-success">Novo</router-link>                
+                <p>Please click on a Patent...</p>
+                <router-link to="/addpatente" class="badge badge-success">Novo</router-link>                
 
             </div>
         </div>
@@ -56,41 +53,41 @@
  </template>
  <script>
  
-     import JogadorDataService from '../../services/JogadorDataService'     
+     import PatenteDataService from '../../services/PatenteDataService'     
  
      export default{
-      name:'listJogadores',
+      name:'listPatentes',
       data() {
              return {
-                 jogadores: [],
-                 currentJogador: null,
+                 patentes: [],
+                 currentPatente: null,
                  currentIndex: -1
              }
          },
          methods: {
-            listarJogadores(){
+            listarPatentes(){
 
-                JogadorDataService.list().then(response =>{
+                PatenteDataService.list().then(response =>{
 
-                    console.log("Retorno do seviço authenticateJogador", response.status);
+                    console.log("Retorno do serviço de listagem de patentes", response.status);
 
-                   this.jogadores = response.data;
+                   this.patentes = response.data;
 
                 }).catch(response => {
 
                     // error callback
-                    alert('Não conectou no serviço listjogador');
+                    alert('Não conectou no serviço listpatente');
                     console.log(response);
                 });
             },
-            setCurrentJogador(jogador, index){
+            setCurrentPatente(patente, index){
 
-                this.currentJogador = jogador;
+                this.currentPatente = patente;
                 this.currentIndex = index;
             },
-            remJogador(jogador, index){
+            remPatente(patente, index){
 
-                JogadorDataService.delete(jogador.nickname)
+                PatenteDataService.delete(patente.id)
                 .then(response => {
                     console.log(response.data);
                     this.refreshList();
@@ -101,14 +98,14 @@
 
             },
             refreshList() {
-                this.listarJogadores();
-                this.currentTutorial = null;
+                this.listarPatentes();
+                this.currentPatente = null;
                 this.currentIndex = -1;
             }
 
          },
          mounted() {
-            this.listarJogadores();
+            this.listarPatentes();
          }
  
      }
