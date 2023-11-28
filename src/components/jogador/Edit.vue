@@ -122,7 +122,7 @@
             },
             deleteJogador(){
 
-                JogadorDataService.delete(this.currentTutorial.nickname)
+                JogadorDataService.delete(this.currentJogador.nickname)
                 .then(response => {
                     console.log(response.data);
                     this.$router.push({ name: "jogadores-list" });

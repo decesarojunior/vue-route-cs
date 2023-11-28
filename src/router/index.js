@@ -8,7 +8,8 @@ import editJogador   from  '@/components/jogador/Edit'
 import novoJogador   from  '@/components/jogador/Add'
 
 import listPatentes from  '@/components/patente/List'
-
+import novoPatente from  '@/components/patente/Add'
+import editPatente from  '@/components/patente/Edit'
 
 Vue.use(Router)
 
@@ -45,6 +46,16 @@ const router = new Router({
       name: 'patentes-list',
       component: listPatentes    
     },
+    {
+      path: '/addpatente',
+      name: "patente-add",
+      component: novoPatente
+    },
+    {
+      path: '/patente/:id',
+      name: "patente-edit",
+      component: editPatente
+    }
   ]
 })
 

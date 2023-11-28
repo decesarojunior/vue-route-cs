@@ -25,7 +25,7 @@
 
         <div class="col-md-6">
             <div v-if="currentPatente">
-                    <h4>Jogador</h4>
+                    <h4>Patente</h4>
                     <div>
                     <label><strong>Id:</strong></label> {{ currentPatente.id }}
                     </div>
