@@ -20,6 +20,7 @@
 <script>
 
     import JogadorDataService from '../services/JogadorDataService'
+    import App from '../App.vue'
 
     export default{
      name:'login',
@@ -45,6 +46,7 @@
                         alert('Jogador '+ response.data.nickname + ' authenticate com sucesso');       
                         
                         this.setAuthenticated({nickname: response.data.nickname})
+
                         
                         this.$router.push({name: "home"});
 

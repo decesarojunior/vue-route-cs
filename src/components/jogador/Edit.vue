@@ -29,10 +29,6 @@
                     <input type="number" v-model="currentJogador.quantdinheiro" class="form-control" id="inputQtdDin">
                 </div>
                 <div class="form-group">
-                    <label for="checkSituacao">Situação:</label>
-                    <input type="checkbox" v-model="currentJogador.situacao" id="checkSituacao">
-                </div>
-                <div class="form-group">
                     <label for="inputCep">Cep:</label>
                     <input type="text" v-model="currentJogador.endereco.cep" class="form-control" id="inputCep">
                 </div>
@@ -110,7 +106,7 @@
                 });               
             },
             updateJogador(){
-
+                alert(this.currentJogador.patentes);
                 JogadorDataService.update(this.currentJogador)
                 .then(response => {
                     console.log('JogadorDataService.update');

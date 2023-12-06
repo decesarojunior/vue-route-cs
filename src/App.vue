@@ -34,11 +34,24 @@
 <script>
 
 export default {
-    name: "App",    
+    name: "App",
+    data(){
+            return {
+               autenthicate : false
+            } 
+    },   
     methods: {
       logout(){        
         localStorage.removeItem('authUser');
         this.$router.push({name: "login"});
+      },
+      showMenu(){
+        console.log('chamou o showMenu');
+        if(localStorage.getItem('authUser')){
+          this.autenthicate = true;
+        }else{
+          this.autenthicate = false;
+        }
       }
     }
 }
