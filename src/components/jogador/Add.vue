@@ -12,12 +12,9 @@
         </div>            
         <div class="form-group">
                 <label for="inputQtdPontos">Quantidade de Pontos:</label>
-                <input type="number" v-model="jogador.quantpontos" class="form-control" id="inputQtdPontos">
+                <input type="number" v-model="jogador.pontos" class="form-control" id="inputQtdPontos">
         </div>
-        <div class="form-group">
-            <label for="inputQtdDin">Quantidade de dinheiro:</label>
-            <input type="number" v-model="jogador.quantdinheiro" class="form-control" id="inputQtdDin">
-        </div>
+
         <div class="form-group">
             <label for="inputCep">Cep:</label>
             <input type="text" v-model="jogador.endereco.cep" class="form-control" id="inputCep">
@@ -61,8 +58,7 @@
                 jogador: {indice: '', 
                                     nickname: '', 
                                     senha: '',
-                                    pontos: 0, 
-                                    quantdinheiro: 0,                                                                        
+                                    pontos: 0,                                                                      
                                     situacao: true,  
                                     endereco: {codigo: 0, cep: '', complemento: ''},
                                     patentes: []},
@@ -79,7 +75,7 @@
                 jgd.endereco = end;                                                
 
                 if (jgd.nickname.trim().length > 0 && jgd.senha.trim().length > 0 && 
-                        jgd.quantpontos > -1 && jgd.quantdinheiro > -1 && 
+                        jgd.pontos > -1 &&
                         jgd.endereco.cep.length > 0) {
                 
                     JogadorDataService.create(jgd)

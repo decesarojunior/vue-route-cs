@@ -24,10 +24,7 @@
                         <label for="inputQtdPontos">Quantidade de Pontos:</label>
                         <input type="number" v-model="currentJogador.pontos" class="form-control" id="inputQtdPontos">
                 </div>
-                <div class="form-group">
-                    <label for="inputQtdDin">Quantidade de dinheiro:</label>
-                    <input type="number" v-model="currentJogador.quantdinheiro" class="form-control" id="inputQtdDin">
-                </div>
+
                 <div class="form-group">
                     <label for="inputCep">Cep:</label>
                     <input type="text" v-model="currentJogador.endereco.cep" class="form-control" id="inputCep">

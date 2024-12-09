@@ -11,6 +11,10 @@ import listPatentes from  '@/components/patente/List'
 import novoPatente from  '@/components/patente/Add'
 import editPatente from  '@/components/patente/Edit'
 
+import listLocais from  '@/components/local/List'
+import novoLocal from  '@/components/local/Add'
+import editLocal from  '@/components/local/Edit'
+
 Vue.use(Router)
 
 const router = new Router({
@@ -55,6 +59,21 @@ const router = new Router({
       path: '/patente/:id',
       name: "patente-edit",
       component: editPatente
+    },
+    {
+      path: '/locais',
+      name: 'locais-list',
+      component: listLocais    
+    },
+    {
+      path: '/addlocal',
+      name: "local-add",
+      component: novoLocal
+    },
+    {
+      path: '/local/:id',
+      name: "local-edit",
+      component: editLocal
     }
   ]
 })

@@ -63,7 +63,7 @@
                 }
 
             },
-            newJogador(){
+            newPatente(){
 
                 this.submitted = false;
                 this.patente = {};
